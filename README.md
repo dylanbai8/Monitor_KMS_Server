@@ -1,10 +1,12 @@
-# KMS 服务器可用性 定时监控 警报系统
+# 针对第三方 KMS 激活服务器可用性的 定时监控 警报系统
 
 此项目利用 vlmcs 软件定时对目标 KMS 服务器进行 Windows 10 激活测试，并将测试结果自动推送到 gitpages页面（或 本机Web网站）。
 
 利用监控宝 实现宕机时 短信、邮件警报。
 
-# ▚ 使用方式 一
+## ▚ 使用方式 一
+
+对目标 KMS服务器 定时进行激活测试 并将测试结果自动推送到 git pages
 
 准备：1.vps服务器一台 2.git仓库一个（用于推送 git pages 仅支持 master 必须包含 readme.md）
 
@@ -35,7 +37,9 @@ bash <(curl -L -s git.io/x.sh) kms.v0v.bid
 ```
 
 
-# ▚ 使用方式 二
+## ▚ 使用方式 二
+
+对目标 KMS服务器 定时进行激活测试 并将测试结果自动推送到 本机的web网站
 
 准备：1.vps服务器一台 2.本机web网站（用于推送 html pages）
 
@@ -53,7 +57,9 @@ bash <(curl -L -s git.io/x.sh) kms.v0v.bid /www/wwwroot/www.mydomain.com/Monitor
 
 ```
 
-# ▚ 使用方式 三
+## ▚ 使用方式 三
+
+对目标 KMS服务器 定时进行激活测试 并将测试结果自动推送到 安装目录
 
 准备：1.vps服务器一台
 
@@ -67,7 +73,7 @@ bash <(curl -L -s git.io/x.sh) kms.v0v.bid
 
 ```
 
-# ▚ 设置 短信 邮件 警报
+## ▚ 设置 短信 邮件 警报
 
 准备：注册 https://www.jiankongbao.com 或者其它类似监控系统
 
@@ -81,7 +87,7 @@ bash <(curl -L -s git.io/x.sh) kms.v0v.bid
 
 ```
 
-# ▚ 卸载全部
+## ▚ 卸载全部
 
 删除根目录 删除gitpages仓库 卸载相关依赖软件
 
