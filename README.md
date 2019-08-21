@@ -12,7 +12,7 @@
 
 ```
 
-1.安装git 拉取pull 仓库到服务器
+1.安装git 拉取pull gitpages仓库到服务器
 
 安装过程中 按提示输入 git 用户名 密码
 
@@ -59,7 +59,7 @@ bash <(curl -L -s git.io/x.sh) kms.v0v.bid /www/wwwroot/www.mydomain.com/Monitor
 
 ## ▚ 使用方式 三
 
-对目标 KMS服务器 定时进行激活测试 并将测试结果自动推送到 安装目录
+对目标 KMS服务器 定时进行激活测试 并将测试结果自动推送到 vlmcs安装目录
 
 准备：1.vps服务器一台
 
@@ -69,7 +69,7 @@ bash <(curl -L -s git.io/x.sh) kms.v0v.bid /www/wwwroot/www.mydomain.com/Monitor
 
 bash <(curl -L -s git.io/x.sh) kms.v0v.bid
 
-当未设置gitpages 且为添加Web路径参数 时，将自动将激活测试结果保存到安装目录，以备其它程序调用
+当未设置gitpages 且为添加Web路径参数 时，将自动把激活测试结果保存到安装目录，以备其它程序调用。
 
 ```
 
@@ -79,17 +79,17 @@ bash <(curl -L -s git.io/x.sh) kms.v0v.bid
 
 ```
 
-添加 gitpages页面地址（或者本机Web网站监控页地址）为 “监控项目”
+1.添加 gitpages页面地址（或者本机Web网站监控页地址）为 “监控项目”
 
-点开 “更多高级设置” - “匹配内容” 中填写：successful
+2.点开 “更多高级设置” - “匹配内容” 中填写：successful
 
-按提示开启 短信 邮件 警报提醒
+3.按提示开启 短信 邮件 警报提醒
 
 ```
 
 ## ▚ 卸载全部
 
-删除根目录 删除gitpages仓库 卸载相关依赖软件
+删除vlmcs安装目录 删除gitpages仓库 卸载相关依赖软件
 
 ```
 
