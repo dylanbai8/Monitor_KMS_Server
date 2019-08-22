@@ -426,6 +426,8 @@ cd ~
 
 echo ""
 echo "----------------------------------------------------------"
+echo ":: Windows10激活测试 操作已完成 ::"
+echo ""
 echo ":: gitpages推送 操作已完成 ::"
 echo ":: 已将 ${kms_server} 激活测试结果 推送至路径：${get_git_path} ::"
 echo ""
@@ -444,6 +446,8 @@ git_pages_file="${git_repository}/index.html"
 make_pages
 
 echo "----------------------------------------------------------"
+echo ":: Windows10激活测试 操作已完成 ::"
+echo ""
 echo ":: 指定路径推送 操作已完成 ::"
 echo ":: 已将 ${kms_server} 激活测试结果 推送至路径：${git_repository}/index.html ::"
 echo ""
@@ -467,6 +471,8 @@ ${monitor_message_3}
 EOF
 
 echo "----------------------------------------------------------"
+echo ":: Windows10激活测试 操作已完成 ::"
+echo ""
 echo ":: 默认路径推送 操作已完成 ::"
 echo ":: 已将 ${kms_server} 激活测试结果 推送至路径：/usr/local/${vlmcs_path}/monitor_message.txt ::"
 echo ""
