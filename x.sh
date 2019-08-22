@@ -23,6 +23,7 @@ git_pages_path="Monitor_PAGES"
 vlmcs_message="successful"
 
 git_pages_email="${git_repository}@microsoft.com"
+git_pages_ad="https://v0v.bid"
 
 #:::::::::::::::::::::::::::::::::::::
 
@@ -33,7 +34,7 @@ system_update(){
 
 echo ""
 echo "----------------------------------------------------------"
-echo "正在 更新操作系统 安装必要软件（gcc git make）"
+echo ":: 正在 更新操作系统 安装必要软件（gcc git make） ::"
 echo "----------------------------------------------------------"
 echo ""
 
@@ -55,6 +56,7 @@ centos|fedora|redhat)
     clear
     echo "----------------------------------------------------------"
     echo ":: 错误！此脚本不支持您的操作系统 ::"
+    echo ":: 项目地址：https://github.com/dylanbai8/Monitor_KMS_Server ::"
     echo "----------------------------------------------------------"
     echo ""
     exit
@@ -70,7 +72,7 @@ esac
 store_info(){
 
 echo "----------------------------------------------------------"
-echo "正在 储存配置信息"
+echo ":: 正在 储存配置信息 ::"
 echo "----------------------------------------------------------"
 echo ""
 
@@ -91,9 +93,8 @@ EOF
 #读取配置信息
 read_info(){
 
-echo ""
 echo "----------------------------------------------------------"
-echo "正在 读取配置信息"
+echo ":: 正在 读取配置信息 ::"
 echo "----------------------------------------------------------"
 echo ""
 
@@ -108,7 +109,7 @@ get_git_path="$(cat /usr/local/${git_pages_path}/git_path_txt)"
 make_pages(){
 
 echo "----------------------------------------------------------"
-echo "正在 生成 html 页面"
+echo ":: 正在 生成 html 页面 ::"
 echo "----------------------------------------------------------"
 echo ""
 
@@ -125,7 +126,7 @@ cat <<EOF > ${git_pages_file}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="all">
 
-<title>KMS服务器状态监控系统</title>
+<title>KMS服务器状态监控系统_${git_pages_ad}</title>
 
 <style>
 * {font-family:"Microsoft Yahei";margin:0;font-weight:lighter;text-decoration:none;text-align:center;line-height:2.2em;}
@@ -151,7 +152,7 @@ a {color:#00AEED;}
 <h1>${monitor_message_2}</h1>
 <br>
 <p>
-<a href="">${monitor_message_3}</a>
+<a href="${git_pages_ad}">${monitor_message_3}</a>
 </p>
 
 </td>
@@ -172,7 +173,7 @@ if [ "${kms_server}" == uninstall ]; then
 
 echo ""
 echo "----------------------------------------------------------"
-echo "正在 卸载 gcc git make 软件"
+echo ":: 正在 卸载 gcc git make 软件 ::"
 echo "----------------------------------------------------------"
 echo ""
 
@@ -192,6 +193,7 @@ centos|fedora|redhat)
     clear
     echo "----------------------------------------------------------"
     echo ":: 错误！此脚本不支持您的操作系统 ::"
+    echo ":: 项目地址：https://github.com/dylanbai8/Monitor_KMS_Server ::"
     echo "----------------------------------------------------------"
     echo ""
     exit
@@ -201,7 +203,7 @@ esac
 
 echo ""
 echo "----------------------------------------------------------"
-echo "正在 卸载 vlmcs 删除 gitpages仓库（如果存在）"
+echo ":: 正在 卸载 vlmcs 删除 gitpages仓库（如果存在） ::"
 echo "----------------------------------------------------------"
 echo ""
 
@@ -213,7 +215,8 @@ rm -rf ~/.git-credentials
 
 clear
 echo "----------------------------------------------------------"
-echo "卸载 操作已完成"
+echo ":: 卸载 操作已完成 ::"
+echo ":: 项目地址：https://github.com/dylanbai8/Monitor_KMS_Server ::"
 echo "----------------------------------------------------------"
 echo ""
 
@@ -228,7 +231,7 @@ if [ "${kms_server}" == -gitpages ]; then
 system_update
 
 echo "----------------------------------------------------------"
-echo "正在 安装gitpages"
+echo ":: 正在 安装gitpages ::"
 echo "----------------------------------------------------------"
 echo ""
 
@@ -251,7 +254,6 @@ cd ~
 
     if [[ -e /usr/local/${git_pages_path}/${git_repository}/README.md ]]; then
 
-    clear
     echo "----------------------------------------------------------"
     echo ":: gitpages 安装成功 ::"
     echo "----------------------------------------------------------"
@@ -262,6 +264,7 @@ cd ~
     clear
     echo "----------------------------------------------------------"
     echo ":: gitpages 安装失败 请检查 git仓库名称、地址是否正确 ::"
+    echo ":: 项目地址：https://github.com/dylanbai8/Monitor_KMS_Server ::"
     echo "----------------------------------------------------------"
     echo ""
     exit
@@ -269,7 +272,7 @@ cd ~
     fi
 
 echo "----------------------------------------------------------"
-echo "正在 推送测试"
+echo ":: 正在 推送测试 ::"
 echo "----------------------------------------------------------"
 echo ""
 
@@ -288,7 +291,7 @@ git commit -m "由KMS监控系统自动推送"
 
 echo ""
 echo "----------------------------------------------------------"
-echo "开始 push 推送 gitpages 按照提示输入 git 用户名 和 密码"
+echo ":: 开始 push 推送 gitpages 按照提示输入 git 用户名 和 密码 ::"
 echo "----------------------------------------------------------"
 echo ""
 
@@ -302,6 +305,7 @@ cd ~
     echo "----------------------------------------------------------"
     echo ":: 推送测试通过 gitpages 安装成功 ::"
     echo ":: 请按照 教程 手动添加 定时任务 ::"
+    echo ":: 项目地址：https://github.com/dylanbai8/Monitor_KMS_Server ::"
     echo "----------------------------------------------------------"
     echo ""
 
@@ -310,6 +314,7 @@ cd ~
     clear
     echo "----------------------------------------------------------"
     echo ":: 推送测试失败 gitpages 安装失败 请检查 git账户名称、密码是否正确 ::"
+    echo ":: 项目地址：https://github.com/dylanbai8/Monitor_KMS_Server ::"
     echo "----------------------------------------------------------"
     echo ""
     exit
@@ -370,9 +375,9 @@ echo "激活测试结果:"${monitor_cmd} >> /usr/local/${vlmcs_path}/monitor_log
 
 if cat /usr/local/${vlmcs_path}/monitor_log_txt | grep "${vlmcs_message}"; then
 
-monitor_message_1="KMS服务器：${kms_server} &nbsp;&nbsp;&nbsp; 服务器状态：在线"
+monitor_message_1="KMS服务器：${kms_server} &nbsp; 服务器状态：在线"
 monitor_message_2="激活测试结果：Windows 10 Activated Successfully ！"
-monitor_message_3="上次激活测试时间：$(date "+%Y-%m-%d %H:%M:%S")"
+monitor_message_3="Windows系统一句命令激活 ${git_pages_ad} &nbsp; 上次激活测试时间：$(date "+%Y-%m-%d %H:%M:%S")"
 
 echo ""
 echo "----------------------------------------------------------"
@@ -382,9 +387,9 @@ echo ""
 
 else
 
-monitor_message_1="KMS服务器：${kms_server} &nbsp;&nbsp;&nbsp; 服务器状态：离线"
+monitor_message_1="KMS服务器：${kms_server} &nbsp; 服务器状态：离线"
 monitor_message_2="激活测试结果：Windows 10 Activation Failed ！"
-monitor_message_3="上次激活测试时间：$(date "+%Y-%m-%d %H:%M:%S")"
+monitor_message_3="Windows系统一句命令激活 ${git_pages_ad} &nbsp; 上次激活测试时间：$(date "+%Y-%m-%d %H:%M:%S")"
 
 echo ""
 echo "----------------------------------------------------------"
@@ -422,7 +427,9 @@ cd ~
 echo ""
 echo "----------------------------------------------------------"
 echo ":: gitpages推送 操作已完成 ::"
-echo ":: 已将 ${kms_server} 激活测试结果 推送至路径：${git_path} ::"
+echo ":: 已将 ${kms_server} 激活测试结果 推送至路径：${get_git_path} ::"
+echo ""
+echo ":: 项目地址：https://github.com/dylanbai8/Monitor_KMS_Server ::"
 echo "----------------------------------------------------------"
 echo ""
 
@@ -439,6 +446,8 @@ make_pages
 echo "----------------------------------------------------------"
 echo ":: 指定路径推送 操作已完成 ::"
 echo ":: 已将 ${kms_server} 激活测试结果 推送至路径：${git_repository}/index.html ::"
+echo ""
+echo ":: 项目地址：https://github.com/dylanbai8/Monitor_KMS_Server ::"
 echo "----------------------------------------------------------"
 echo ""
 
@@ -460,6 +469,8 @@ EOF
 echo "----------------------------------------------------------"
 echo ":: 默认路径推送 操作已完成 ::"
 echo ":: 已将 ${kms_server} 激活测试结果 推送至路径：/usr/local/${vlmcs_path}/monitor_message.txt ::"
+echo ""
+echo ":: 项目地址：https://github.com/dylanbai8/Monitor_KMS_Server ::"
 echo "----------------------------------------------------------"
 echo ""
 
