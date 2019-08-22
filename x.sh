@@ -208,6 +208,9 @@ echo ""
 rm -rf /usr/local/${git_pages_path}
 rm -rf /usr/local/${vlmcs_path}
 
+rm -rf ~/.gitconfig
+rm -rf ~/.git-credentials
+
 clear
 echo "----------------------------------------------------------"
 echo "卸载 操作已完成"
@@ -231,6 +234,9 @@ echo ""
 
 rm -rf /usr/local/${git_pages_path}
 mkdir /usr/local/${git_pages_path}
+
+rm -rf ~/.gitconfig
+rm -rf ~/.git-credentials
 
 store_info
 
