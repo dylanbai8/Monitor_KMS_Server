@@ -252,6 +252,13 @@ cd /usr/local/${git_pages_path}
 git config --global user.email "${git_pages_email}"
 git config --global core.autocrlf false
 git config --global credential.helper store
+
+echo ""
+echo "----------------------------------------------------------"
+echo ":: 开始 clone拉取 gitpages仓库（私库Private需按照提示输入 git 用户名 和 密码） ::"
+echo "----------------------------------------------------------"
+echo ""
+
 git clone ${git_path}
 
 cd ~
@@ -260,16 +267,22 @@ cd ~
 
     echo ""
     echo "----------------------------------------------------------"
-    echo ":: gitpages 安装成功 ::"
+    echo ":: gitpages clone安装成功 ::"
     echo "----------------------------------------------------------"
     echo ""
 
     else
 
+    rm -rf /usr/local/${git_pages_path}
+    rm -rf ~/.gitconfig
+    rm -rf ~/.git-credentials
     clear
     echo ""
     echo "----------------------------------------------------------"
     echo ":: gitpages 安装失败 请检查 git仓库名称、地址是否正确 ::"
+    echo ":: 必须为公开源代码Public 仅支持 master 必须包含 readme.md ::"
+    echo ""
+    echo ":: 已清除错误仓库信息 请尝试重新执行命令安装 ::"
     echo ":: 项目地址：https://github.com/dylanbai8/Monitor_KMS_Server ::"
     echo "----------------------------------------------------------"
     echo ""
