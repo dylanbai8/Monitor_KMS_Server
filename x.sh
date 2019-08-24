@@ -54,6 +54,7 @@ centos|fedora|redhat)
 
 *)
     clear
+    echo ""
     echo "----------------------------------------------------------"
     echo ":: 错误！此脚本不支持您的操作系统 ::"
     echo ":: 项目地址：https://github.com/dylanbai8/Monitor_KMS_Server ::"
@@ -191,6 +192,7 @@ centos|fedora|redhat)
 
 *)
     clear
+    echo ""
     echo "----------------------------------------------------------"
     echo ":: 错误！此脚本不支持您的操作系统 ::"
     echo ":: 项目地址：https://github.com/dylanbai8/Monitor_KMS_Server ::"
@@ -214,6 +216,7 @@ rm -rf ~/.gitconfig
 rm -rf ~/.git-credentials
 
 clear
+echo ""
 echo "----------------------------------------------------------"
 echo ":: 卸载 操作已完成 ::"
 echo ":: 项目地址：https://github.com/dylanbai8/Monitor_KMS_Server ::"
@@ -298,11 +301,14 @@ echo ":: 开始 push 推送 gitpages 按照提示输入 git 用户名 和 密码
 echo "----------------------------------------------------------"
 echo ""
 
-git push origin master
+rm -rf /usr/local/${git_pages_path}/gitpush_log_txt
+
+gitpush_cmd=`git push origin master`
+echo "git推送结果:"${gitpush_cmd} >> /usr/local/${git_pages_path}/gitpush_log_txt
 
 cd ~
 
-    if [[ -e /usr/local/${git_pages_path}/${git_repository}/index.html ]]; then
+    if cat /usr/local/${git_pages_path}/gitpush_log_txt | grep "Everything"; then
 
     clear
     echo ""
@@ -316,10 +322,15 @@ cd ~
 
     else
 
+    rm -rf /usr/local/${git_pages_path}
+    rm -rf ~/.gitconfig
+    rm -rf ~/.git-credentials
     clear
     echo ""
     echo "----------------------------------------------------------"
     echo ":: 推送测试失败 gitpages 安装失败 请检查 git账户名称、密码是否正确 ::"
+    echo ""
+    echo ":: 已清除错误仓库信息 请尝试重新执行命令安装 ::"
     echo ":: 项目地址：https://github.com/dylanbai8/Monitor_KMS_Server ::"
     echo "----------------------------------------------------------"
     echo ""
