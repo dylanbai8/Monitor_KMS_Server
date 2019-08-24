@@ -253,7 +253,6 @@ git config --global user.email "${git_pages_email}"
 git config --global core.autocrlf false
 git config --global credential.helper store
 
-echo ""
 echo "----------------------------------------------------------"
 echo ":: 开始 clone拉取 gitpages仓库（私库Private需按照提示输入 git 用户名 和 密码） ::"
 echo "----------------------------------------------------------"

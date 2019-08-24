@@ -57,6 +57,8 @@ bash <(curl -L -s git.io/x.sh) kms.v0v.bid /www/wwwroot/www.mydomain.com/Monitor
 
 ```
 
+注意：当已安装“使用方式 一”时，将优先推送gitpages。
+
 ## ▚ 使用方式 三
 
 对目标 KMS服务器 定时进行激活测试 并将测试结果自动推送到 vlmcs安装目录
@@ -79,11 +81,11 @@ bash <(curl -L -s git.io/x.sh) kms.v0v.bid
 
 ```
 
-1.添加 gitpages页面地址（或者本机Web网站监控页地址）为 “监控项目”
-
-2.点开 “更多高级设置” - “匹配内容” 中填写：successful
-
-3.按提示开启 短信 邮件 警报提醒
+1.注册 https://www.jiankongbao.com 或者其它类似监控系统
+2.创建监控任务-普通网站监控-监控网址：https://bid.v0v.bid
+3.更多高级设置-包含匹配内容-匹配内容：Successfully
+4.按照该网站提示配置并开启Email和手机短信提醒
+当 kms.v0v.bid 宕机时，你将及时收到宕机提醒，服务恢复时收到恢复提醒。
 
 ```
 
