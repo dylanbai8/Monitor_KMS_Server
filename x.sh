@@ -308,7 +308,7 @@ echo "git推送结果:"${gitpush_cmd} >> /usr/local/${git_pages_path}/gitpush_lo
 
 cd ~
 
-    if cat /usr/local/${git_pages_path}/gitpush_log_txt | grep "done"; then
+    if cat ${gitpush_cmd} | grep "done"; then
 
     clear
     echo ""
@@ -320,7 +320,7 @@ cd ~
     echo "----------------------------------------------------------"
     echo ""
 
-    elif  cat /usr/local/${git_pages_path}/gitpush_log_txt | grep "Everything"; then
+    elif  cat ${gitpush_cmd} | grep "Everything"; then
 
     clear
     echo ""
