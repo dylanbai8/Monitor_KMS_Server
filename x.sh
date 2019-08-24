@@ -308,19 +308,7 @@ echo "git推送结果:"${gitpush_cmd} >> /usr/local/${git_pages_path}/gitpush_lo
 
 cd ~
 
-    if cat /usr/local/${git_pages_path}/gitpush_log_txt | grep "Everything"; then
-
-    clear
-    echo ""
-    echo "----------------------------------------------------------"
-    echo ":: 推送测试通过 gitpages 安装成功 ::"
-    echo ":: 请按照 教程 手动添加 定时任务 ::"
-    echo ""
-    echo ":: 项目地址：https://github.com/dylanbai8/Monitor_KMS_Server ::"
-    echo "----------------------------------------------------------"
-    echo ""
-
-    else
+    if cat /usr/local/${git_pages_path}/gitpush_log_txt | grep "fatal"; then
 
     rm -rf /usr/local/${git_pages_path}
     rm -rf ~/.gitconfig
@@ -335,6 +323,18 @@ cd ~
     echo "----------------------------------------------------------"
     echo ""
     exit
+
+    else
+
+    clear
+    echo ""
+    echo "----------------------------------------------------------"
+    echo ":: 推送测试通过 gitpages 安装成功 ::"
+    echo ":: 请按照 教程 手动添加 定时任务 ::"
+    echo ""
+    echo ":: 项目地址：https://github.com/dylanbai8/Monitor_KMS_Server ::"
+    echo "----------------------------------------------------------"
+    echo ""
 
     fi
 
