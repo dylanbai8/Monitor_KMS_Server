@@ -334,7 +334,7 @@ cd ~
 
     else
 
-    rm -rf /usr/local/${git_pages_path}
+    #rm -rf /usr/local/${git_pages_path}
     rm -rf ~/.gitconfig
     rm -rf ~/.git-credentials
     clear
