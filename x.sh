@@ -230,6 +230,7 @@ if [ "${kms_server}" == -gitpages ]; then
 
 system_update
 
+echo ""
 echo "----------------------------------------------------------"
 echo ":: 正在 安装gitpages ::"
 echo "----------------------------------------------------------"
@@ -254,6 +255,7 @@ cd ~
 
     if [[ -e /usr/local/${git_pages_path}/${git_repository}/README.md ]]; then
 
+    echo ""
     echo "----------------------------------------------------------"
     echo ":: gitpages 安装成功 ::"
     echo "----------------------------------------------------------"
@@ -262,6 +264,7 @@ cd ~
     else
 
     clear
+    echo ""
     echo "----------------------------------------------------------"
     echo ":: gitpages 安装失败 请检查 git仓库名称、地址是否正确 ::"
     echo ":: 项目地址：https://github.com/dylanbai8/Monitor_KMS_Server ::"
@@ -302,9 +305,11 @@ cd ~
     if [[ -e /usr/local/${git_pages_path}/${git_repository}/index.html ]]; then
 
     clear
+    echo ""
     echo "----------------------------------------------------------"
     echo ":: 推送测试通过 gitpages 安装成功 ::"
     echo ":: 请按照 教程 手动添加 定时任务 ::"
+    echo ""
     echo ":: 项目地址：https://github.com/dylanbai8/Monitor_KMS_Server ::"
     echo "----------------------------------------------------------"
     echo ""
@@ -312,6 +317,7 @@ cd ~
     else
 
     clear
+    echo ""
     echo "----------------------------------------------------------"
     echo ":: 推送测试失败 gitpages 安装失败 请检查 git账户名称、密码是否正确 ::"
     echo ":: 项目地址：https://github.com/dylanbai8/Monitor_KMS_Server ::"
