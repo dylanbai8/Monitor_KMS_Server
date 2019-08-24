@@ -303,12 +303,15 @@ echo ""
 
 rm -rf /usr/local/${git_pages_path}/gitpush_log_txt
 
-gitpush_cmd=`git push origin master`
-echo "git推送结果:"${gitpush_cmd} >> /usr/local/${git_pages_path}/gitpush_log_txt
+gitpush_cmd(){
+git push origin master
+}
+
+gitpush_cmd 2>&1 | tee /usr/local/${git_pages_path}/gitpush_log_txt
 
 cd ~
 
-    if cat ${gitpush_cmd} | grep "done"; then
+    if cat /usr/local/${git_pages_path}/gitpush_log_txt | grep "done"; then
 
     clear
     echo ""
@@ -320,7 +323,7 @@ cd ~
     echo "----------------------------------------------------------"
     echo ""
 
-    elif  cat ${gitpush_cmd} | grep "Everything"; then
+    elif cat /usr/local/${git_pages_path}/gitpush_log_txt | grep "Everything"; then
 
     clear
     echo ""
@@ -334,7 +337,7 @@ cd ~
 
     else
 
-    #rm -rf /usr/local/${git_pages_path}
+    rm -rf /usr/local/${git_pages_path}
     rm -rf ~/.gitconfig
     rm -rf ~/.git-credentials
     clear
