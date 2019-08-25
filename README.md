@@ -12,7 +12,7 @@
 
 ```
 
-1.安装git 拉取pull gitpages仓库到服务器
+1.执行以下命令 安装git 拉取pull gitpages仓库到服务器
 
 安装过程中 按提示输入 git 用户名 密码
 
@@ -71,7 +71,7 @@ bash <(curl -L -s git.io/x.sh) kms.v0v.bid /www/wwwroot/www.mydomain.com/Monitor
 
 bash <(curl -L -s git.io/x.sh) kms.v0v.bid
 
-当未设置gitpages 且为添加Web路径参数 时，将自动把激活测试结果保存到安装目录，以备其它程序调用。
+当未设置gitpages 且未添加Web路径参数 时，将自动把激活测试结果保存到安装目录，以备其它程序调用。
 
 ```
 
