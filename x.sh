@@ -407,9 +407,9 @@ echo "激活测试结果:"${monitor_cmd} >> /usr/local/${vlmcs_path}/monitor_log
 
 if cat /usr/local/${vlmcs_path}/monitor_log_txt | grep "${vlmcs_message}"; then
 
-monitor_message_1="KMS服务器：${kms_server} &nbsp; 服务器状态：在线"
+monitor_message_1="KMS服务器：${kms_server}<br><br>服务器状态：在线"
 monitor_message_2="激活测试结果：Windows 10 Activated Successfully ！"
-monitor_message_3="Windows系统一句命令激活 ${git_pages_ad} &nbsp; 上次激活测试时间：$(date "+%Y-%m-%d %H:%M:%S")"
+monitor_message_3="Windows系统一句命令激活 ${git_pages_ad}&nbsp;上次激活测试时间：$(date "+%Y-%m-%d %H:%M:%S")"
 
 echo ""
 echo "----------------------------------------------------------"
@@ -419,9 +419,9 @@ echo ""
 
 else
 
-monitor_message_1="KMS服务器：${kms_server} &nbsp; 服务器状态：离线"
+monitor_message_1="KMS服务器：${kms_server}<br><br>服务器状态：离线"
 monitor_message_2="激活测试结果：Windows 10 Activation Failed ！"
-monitor_message_3="机主正在紧急修复 请稍后访问 ${git_pages_ad} &nbsp; 上次激活测试时间：$(date "+%Y-%m-%d %H:%M:%S")"
+monitor_message_3="机主正在紧急修复 请稍后访问 ${git_pages_ad}&nbsp;上次激活测试时间：$(date "+%Y-%m-%d %H:%M:%S")"
 
 echo ""
 echo "----------------------------------------------------------"
