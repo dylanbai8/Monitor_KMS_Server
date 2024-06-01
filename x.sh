@@ -23,7 +23,7 @@ git_pages_path="Monitor_PAGES"
 vlmcs_message="successful"
 
 git_pages_email="${git_repository}@microsoft.com"
-git_pages_ad="https://v0v.bid"
+git_pages_ad="https://jihuowin.com"
 
 #:::::::::::::::::::::::::::::::::::::
 
